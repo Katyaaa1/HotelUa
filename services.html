@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Послуги - Готелі України</title>
+    <style>
+        /* Глобальні стилі */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Заголовок */
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        header .logo h1 {
+            font-size: 22px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #ff5722;
+        }
+
+        header .auth-buttons button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        header .auth-buttons .signup {
+            background-color: #ff5722;
+            color: white;
+        }
+
+        header .auth-buttons .login {
+            background-color: white;
+            color: #003366;
+            border: 1px solid #003366;
+        }
+
+        header .auth-buttons .signup:hover {
+            background-color: #ff3d00;
+        }
+
+        header .auth-buttons .login:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Основний контент */
+        .container {
+            padding: 30px;
+        }
+
+        .container h2 {
+            font-size: 28px;
+            color: #003366;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .service {
+            flex: 1 1 calc(33.333% - 20px);
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service img {
+            width: 50px;
+            margin-bottom: 15px;
+        }
+
+        .service h3 {
+            font-size: 18px;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Додаткові послуги */
+        .additional-services {
+            margin-top: 40px;
+        }
+
+        .additional-services h3 {
+            font-size: 22px;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .additional-services .additional {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .additional .item {
+            flex: 1 1 calc(33.333% - 20px);
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .additional .item img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .additional .item p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: #003366;
+            color: white;
+        }
+
+        footer a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Адаптивний дизайн */
+        @media (max-width: 768px) {
+            .services .service,
+            .additional .item {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="фото/logo.png" alt="Логотип">
+            <h1>Готелі України</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="hotels.html">Готелі</a></li>
+                <li><a href="about.html">Про нас</a></li>
+    
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <!-- Кнопки з перенаправленням -->
+            <button class="signup" onclick="window.location.href='regist.html'">Реєстрація</button>
+            <button class="login" onclick="window.location.href='open.html'">Увійти</button>
+        </div>
+    </header>
+
+    <!-- Основний контент -->
+    <div class="container">
+        <h2>Послуги</h2>
+        <div class="services">
+            <div class="service">
+                <img src="фото/breakfast.jpg" alt="Сніданок">
+                <h3>Сніданок</h3>
+                <p>Опис переваг сніданку для наших гостей.</p>
+            </div>
+            <div class="service">
+                <img src="фото/gym.jpg" alt="Тренажерний зал">
+                <h3>Тренажерний зал</h3>
+                <p>Опис переваг тренувань у нашому залі.</p>
+            </div>
+            <div class="service">
+                <img src="фото/transfer.jpg" alt="Трансфер">
+                <h3>Трансфер</h3>
+                <p>Опис трансферних послуг для наших гостей.</p>
+            </div>
+            <div class="service">
+                <img src="фото/cameras.jpg" alt="Камери схову">
+                <h3>Камери схову</h3>
+                <p>Опис послуг безпечного зберігання речей.</p>
+            </div>
+            <div class="service">
+                <img src="фото/tour.jpg" alt="Екскурсія">
+                <h3>Екскурсія</h3>
+                <p>Опис унікальних екскурсій для наших гостей.</p>
+            </div>
+            <div class="service">
+                <img src="фото/spa.jpg" alt="Спа-басейн">
+                <h3>Спа-басейн</h3>
+                <p>Опис релаксаційних послуг для наших гостей.</p>
+            </div>
+        </div>
+
+        <div class="additional-services">
+            <h3>Додаткові послуги:</h3>
+            <div class="additional">
+                <div class="item">
+                    <img src="фото/additional1.jpg" alt="Додаткова послуга-прання речей">
+                    <p>Прання речей.</p>
+                </div>
+                <div class="item">
+                    <img src="фото/additional2.jpg" alt="Додаткова послуга - портьє">
+                    <p>Портьє.</p>
+                </div>
+                <div class="item">
+                    <img src="фото/additional3.jpg" alt="Додаткова послуга - бронювання столиків,басейну і тд.">
+                    <p>Бронювання столиків, басейну і тд..</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Готелі України. Всі права захищені.</p>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+    </footer>
+</body>
+</html>

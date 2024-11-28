@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Готелі</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+        }
+
+        header .container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .auth button {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .auth button:hover {
+            background-color: white;
+            color: #003366;
+        }
+
+        /* Main Content Styles */
+        main {
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .hotel-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .hotel-item {
+            text-align: center;
+            flex: 1;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .hotel-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .hotel-item p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .hotel-item .distance {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .cities-container {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #eaf1f9;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cities-container .city-box {
+            text-align: center;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            border: 2px solid #003366;
+        }
+
+        .cities-container .city-box h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .popular-text {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 18px;
+            color: #003366;
+        }
+
+        /* Список міст без рамок і щільніше */
+        .city-list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px; /* Зменшили відстань між елементами */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .city-list li {
+            font-size: 16px;
+            font-weight: 300;
+            color: #555;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f1f1f1; /* Замінили рамку на фон */
+            transition: background-color 0.3s ease;
+        }
+
+        .city-list li:hover {
+            background-color: #003366;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            .hotel-list {
+                flex-direction: column;
+            }
+
+            .cities-container {
+                flex-direction: column;
+            }
+
+            .city-list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">Готелі України</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="services.html">Послуги</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Готелі</h1>
+
+        <!-- Готелі та Фото -->
+        <section class="hotel-list">
+            <div class="hotel-item">
+                <img src="фото/Київ_готелі.jpg" alt="Готель Сонце">
+                <p>Готель "Сонце" – затишок і комфорт.</p>
+                <p class="distance">Київ - 127 км</p>
+            </div>
+            <div class="hotel-item">
+                <img src="фото/Львів_готелі.jpg" alt="Готель Море">
+                <p>Готель "Море" – відпочинок на березі моря.</p>
+                <p class="distance">Львів - 200 км</p>
+            </div>
+            <div class="hotel-item">
+                <img src="фото/Одеса_готелі.jpg" alt="Готель Гори">
+                <p>Готель "Гори" – свіже повітря та спокій.</p>
+                <p class="distance">Одеса - 150 км</p>
+            </div>
+            <div class="hotel-item">
+                <img src="фото/Черкаси_готелі.jpg" alt="Готель Черкаси">
+                <p>Готель "Черкаси" – затишок в серці України.</p>
+                <p class="distance">Черкаси - 27 км</p>
+            </div>
+        </section>
+
+        <!-- Міста в Україні -->
+        <section class="cities-container">
+            <div class="city-box">
+                <h3>Міста в Україні</h3>
+                <p>Гірськолижний курорт | Хостел | Готелі</p>
+            </div>
+        </section>
+
+        <!-- Популярно серед мандрівників -->
+        <div class="popular-text">
+            <p>Популярно серед мандрівників з України</p>
+        </div>
+
+        <!-- Список міст -->
+        <ul class="city-list">
+            <li>Готелі міста Львів</li>
+            <li>Готелі міста Київ</li>
+            <li>Готелі міста Яремче</li>
+            <li>Готелі міста Буковель</li>
+            <li>Готелі міста Одеса</li>
+            <li>Готелі міста Дніпро</li>
+            <li>Готелі міста Чернівці</li>
+            <li>Готелі міста Івано-Франківськ</li>
+            <li>Готелі міста Вінниця</li>
+            <li>Готелі міста Ужгород</li>
+            <li>Готелі міста Луцьк</li>
+            <li>Готелі міста Кам'янець-Подільський</li>
+            <li>Готелі міста Полтава</li>
+            <li>Готелі міста Славське</li>
+            <li>Готелі міста Мукачево</li>
+            <li>Готелі міста Тернопіль</li>
+            <li>Готелі міста Трускавець</li>
+            <li>Готелі міста Хмельницький</li>
+            <li>Готелі міста Рівне</li>
+            <li>Готелі міста Харків</li>
+            <li>Готелі міста Ворохта</li>
+            <li>Готелі міста Берегове</li>
+            <li>Готелі міста Суми</li>
+            <li>Готелі міста Житомир</li>
+            <li>Готелі міста Черкаси</li>
+        </ul>
+    </main>
+</body>
+</html>

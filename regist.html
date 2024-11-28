@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003366;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Готелі України | Реєстрація</h1>
+</header>
+
+<div class="container">
+    <h2>Створити акаунт</h2>
+
+    <!-- Форма реєстрації -->
+    <form id="registrationForm">
+        <div id="error-message" class="error"></div>
+
+        <label for="username">Логін</label>
+        <input type="text" id="username" name="username" placeholder="Введіть ваш логін" required>
+
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" placeholder="Введіть ваш пароль" required>
+
+        <label for="confirm-password">Підтвердження паролю</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Підтвердьте ваш пароль" required>
+
+        <button type="submit">Зареєструватися</button>
+    </form>
+
+    <div class="footer">
+        <p>Вже маєте акаунт? <a href="open.html">Увійти</a></p>
+    </div>
+</div>
+
+<script>
+    // Обробка форми реєстрації
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Запобігає перезавантаженню сторінки при надсиланні форми
+
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirm-password').value;
+
+        // Перевірка, чи пароль і підтвердження паролю співпадають
+        if (password !== confirmPassword) {
+            document.getElementById('error-message').innerText = "Паролі не співпадають!";
+            return;
+        }
+
+        // Просте перевірка введення (можна замінити на реальну перевірку на сервері)
+        if (username && password) {
+            // Успішна реєстрація, перенаправлення на головну сторінку
+            window.location.href = "index.html"; // Замість "index.html" можна вказати іншу сторінку
+        } else {
+            // Якщо не введені логін чи пароль
+            document.getElementById('error-message').innerText = "Будь ласка, заповніть усі поля!";
+        }
+    });
+</script>
+
+</body>
+</html>

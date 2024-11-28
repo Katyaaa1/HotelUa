@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Готелі України - Про нас</title>
+
+    <!-- Вбудований CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Шапка */
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        /* Меню */
+        nav {
+            background-color: #003366;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: inline-flex;
+            gap: 25px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Кнопки "Увійти" і "Зареєструватися" */
+        .auth-buttons {
+            display: inline-flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .auth-buttons a {
+            background-color: #00509e;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .auth-buttons a:hover {
+            background-color: #003366;
+        }
+
+        /* Структура About */
+        .about {
+            padding: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        /* Ліва частина - Фото компанії */
+        .about-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .about-left img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Права частина - Текст і фото */
+        .about-right {
+            flex: 1;
+        }
+
+        .about-right h2 {
+            font-size: 24px;
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        .about-right .text {
+            background-color: #eaf1f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .photo-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .photo-container img {
+            width: 100%;
+            max-width: 220px; /* Максимальний розмір для фото */
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .video-container iframe {
+            border-radius: 8px;
+            max-width: 100%;
+            height: 270px;
+            margin-top: 20px;
+        }
+
+        /* Контакти */
+        .contact-container {
+            background-color: #eaf1f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .contact-container h3 {
+            font-size: 20px;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .contact-container p {
+            margin-bottom: 10px;
+        }
+
+        /* Мапа */
+        .map-container {
+            flex: 1;
+            margin-top: 20px;
+        }
+
+        .map-container iframe {
+            border-radius: 8px;
+            width: 100%;
+            height: 280px;
+            margin-top: 20px;
+        }
+
+        /* Форма зворотного зв'язку */
+        .contact-form {
+            background-color: #eaf1f9;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-size: 16px;
+        }
+
+        .contact-form h3 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form button {
+            background-color: #003366;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-form button:hover {
+            background-color: #00509e;
+        }
+
+        /* Адаптивний дизайн */
+        @media (max-width: 768px) {
+            .about {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-left,
+            .about-right {
+                text-align: center;
+            }
+
+            .about-left img {
+                max-width: 90%;
+            }
+
+            .photo-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .map-container iframe {
+                height: 250px;
+            }
+
+            .video-container iframe {
+                height: 250px;
+            }
+
+            .contact-form {
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Готелі України</h1>
+        <p>Про нас</p>
+    </header>
+
+    <!-- Навігаційне меню -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="services.html">Послуги</a></li>
+            <li><a href="hotels.html">Готелі</a></li>
+        </ul>
+        <!-- Кнопки "Увійти" і "Зареєструватися" -->
+        <div class="auth-buttons">
+            <a href="open.html">Увійти</a>
+            <a href="regist.html">Зареєструватися</a>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about">
+        <!-- Ліва частина - Фото компанії, відео та фото готелів -->
+        <div class="about-left">
+            <img src="фото/компанія.jpg" alt="Фото компанії">
+            
+            <div class="video-container">
+                <h2>Наше відео</h2>
+                <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div class="photo-container">
+                <p><h2>Наші фото</h2></p>
+                <!-- Фото 1 -->
+                <img src="фото/готель1.jpg" alt="Фото готелю 1">
+                <!-- Фото 2 -->
+                <img src="фото/готель2.jpg" alt="Фото готелю 2">
+                <!-- Фото 3 -->
+                <img src="фото/готель3.jpg" alt="Фото готелю 3">
+            <h2>Готелі, апартаменти, люкс номери, котеджі, хостели.</h2>
+            </div>
+        </div>
+
+        <!-- Права частина - Текст, Мапа та Контакти -->
+        <div class="about-right">
+            <h2>Про нас</h2>
+            <div class="text">
+                <p>Ми - провідна компанія в галузі готельного бізнесу в Україні, з багаторічним досвідом. Наша мета - забезпечити комфорт і зручність кожному гостю. Ми пропонуємо різноманітні послуги та високий рівень обслуговування.</p>
+                <p>Наші готелі надають не лише зручні умови для проживання, а й додаткові послуги, такі як трансфер, організація екскурсій та спа-послуги. Місія нашої компанії — створити для кожного гостя незабутній досвід, надаючи високоякісне обслуговування та атмосферу затишку.</p>
+            </div>
+
+            <!-- Мапа -->
+            <div class="map-container">
+                <h2>Наша локація</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=your-map-link" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <!-- Контакти -->
+            <div class="contact-container">
+                <h3>Контакти</h3>
+                <p><strong>Адреса:</strong> Київ, вул. Прикладна, 15</p>
+                <p><strong>Телефон:</strong> +38 (044) 123-45-67</p>
+                <p><strong>Електронна пошта:</strong> info@hotel.com</p>
+            </div>
+
+            <!-- Форма зворотного зв'язку -->
+            <div class="contact-form">
+                <h3>Зворотний зв'язок</h3>
+                <form action="/submit-form" method="POST">
+                    <input type="text" name="name" placeholder="Ваше ім'я" required>
+                    <input type="email" name="email" placeholder="Ваша електронна пошта" required>
+                    <input type="text" name="subject" placeholder="Тема повідомлення" required>
+                    <textarea name="message" rows="6" placeholder="Ваше повідомлення" required></textarea>
+                    <button type="submit">Відправити</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
